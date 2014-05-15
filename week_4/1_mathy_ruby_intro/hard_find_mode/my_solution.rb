@@ -18,7 +18,7 @@
 # 1. Create a new hash map from key (number or string value) to value (frequency with default value of 0)
 # 2. Iterate through each element, add a count to the value(frequency) mapped to that key(the element)
 # 3. Within the hash map created, select only pairs (key, value) with value == highest value 
-# 4. Now that we got a new hash with only keys that are mapped to the highest value, choose all keys in that hash map to return
+# 4. Now that we got a new hash with only keys that are mapped to the highest value, return an array of all keys in that hash map
 
 # 2. Initial Solution
 def mode(array)  
