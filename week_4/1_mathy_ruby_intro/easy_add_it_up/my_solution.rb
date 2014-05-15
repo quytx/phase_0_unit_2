@@ -37,9 +37,7 @@
 # 2. Initial Solution
 def total(array)
 	sum = 0
-	array.each do |x|
-		sum += x
-	end
+	array.each { |x| sum += x }	
 	sum
 end
 
@@ -49,11 +47,12 @@ def sentence_maker(array)
 		sentence += array[i].to_s + " "
 	end
 	sentence += array[array.length - 1].to_s + "."
-	sentence 
 end
 
 # 3. Refactored Solution
-# none
+def total(array)
+	sum = array.inject { |m, n| m + n }
+end
 
 
 # 4. Reflection 
@@ -62,3 +61,5 @@ end
 # The sentence_maker method took me a while. At first I did not include the ".to_s" 
 # part so I failed the last test (because 586 is not a string but a number and the + operation gives an error)
 # I fixed that by adding .to_s so it converts each element to string type before concatenating to the result string
+# Later I found out that inject is a short way to iterate through all element and accumulate all elements into a single variable.
+# I am not sure if the inject call is slower than a for-loop, but it does look more concise.
