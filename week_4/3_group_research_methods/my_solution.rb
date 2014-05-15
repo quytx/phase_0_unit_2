@@ -4,19 +4,21 @@ i_want_pets = ["I", "want", 3, "pets", "but", "I", "only", "have", 2]
 my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4, "Poly" => 4, 
             "Annabelle" => 0, "Ditto" => 3}
 
-# Person 1's solution
+
+
+# Quy's solution
 def my_array_finding_method(source, thing_to_find)
-  # Your code here!
+  return source.select { |s| s.to_s.index(thing_to_find) != nil }
 end
 
 def my_hash_finding_method(source, thing_to_find)
-  # Your code here!
+  return source.select { |k,v| v == thing_to_find }.keys
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# select: select a part of an array/hash that meets a certain condition
+# (string).index: return the index of a character in a string
+# (hash).keys : return all keys in the hash
 
 # Person 2
 def my_array_modification_method(source, thing_to_modify)
