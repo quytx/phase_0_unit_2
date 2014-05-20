@@ -1,7 +1,7 @@
 # U2.W4: Refactor Cipher Solution
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 
 # 1. Solution
@@ -33,13 +33,27 @@ end
 
 # Questions:
 # 1. What is the .to_a method doing?
+# => create a new array by joining elements
+
 # 2. How does the rotate method work? What does it work on?
+# => rotate the arrays by shifting elements to a new index: new_index = old_index + rotate_number
+
 # 3. What is `each_char` doing?
+# => iterate through each character of the original sentence
+
 # 4. What does `sample` do?
+# => Randomly and uniquely choose an element in the "spaces" array 
+
 # 5. Are there any other methods you want to understand better?
+
+
 # 6. Does this code look better or worse than your refactored solution
 #    of the original cipher code? What's better? What's worse?
+# => I think I had the same idea, but instead of using the built-in "rotate" method (which I did not know)
+# I created a new method called "cipherShift(value)" and it does exactly the same thing.
+
 # 7. Is this good code? What makes it good? What makes it bad?
+# => It looks good to me.
 
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
