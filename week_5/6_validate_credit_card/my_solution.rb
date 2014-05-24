@@ -44,7 +44,7 @@ class CreditCard
       digits[i] = digits[i] * 2
     end
     
-    # Join the array's elements in a string and calculate sum of all digits
+    # Join the array's elements into a string and calculate sum of all digits
     sum = 0
     digits.to_s.each_char { |digit| sum += digit.to_i }
     
