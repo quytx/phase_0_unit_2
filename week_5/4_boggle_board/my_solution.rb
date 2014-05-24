@@ -78,7 +78,7 @@ end
 puts get_row(1)
 
 # Reflection 
-# Since the given method header does not include a board reference, it has to be done in either way:
+# Since the given method header does not include a board reference, it has to be done in one of these ways:
 # 1. Make boggle_board a global variable so that it can be accessed by the other methods - not good practice
 # 2. Add another parameter to get_row and get_col method, i.e get_row(board, row) and get_col(board, col) - better
 # 3. Create a class named boggle_board, define get_row, get_col as instance methods - I think this would be the best way to do 
@@ -132,8 +132,8 @@ end
 puts get_col(1)
 
 # Reflection 
-# Since the given method header does not include a board reference, it has to be done in either way:
+# Since the given method header does not include a board reference, it has to be done in one of these ways:
 # 1. Make boggle_board a global variable so that it can be accessed by the other methods - not good practice
 # 2. Add another parameter to get_row and get_col method, i.e get_row(board, row) and get_col(board, col) - better
 # 3. Create a class named boggle_board, define get_row, get_col as instance methods - I think this would be the best way to do 
-# 4. For get_col(col) method, I used Array.transpose which return a new array transposed from the original one  
+# For get_col(col) method, I used Array.transpose which return a new array transposed from the original one  
