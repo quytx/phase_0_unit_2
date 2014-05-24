@@ -1,11 +1,14 @@
 # U2.W5: Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 # EXPLANATION OF require_relative
-#
-#
-require_relative 'state_data'
+# This allows us to load a file that is in a relative directory path to this file
+
+# ANALYZE state_data
+# This hash contains a map from a state to its stats (which is another hash). 
+# Each state's stats is another hash map from a certain property (population, etc.) to its value 
+require_relative 'state_data' 
 
 class VirusPredictor
 
@@ -16,15 +19,29 @@ class VirusPredictor
     @region = region
     @next_region = regional_spread
   end
-
-  def virus_effects  #HINT: What is the SCOPE of instance variables?
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+  
+  # calculate the potential effects of the virus in the current state
+  # can be called from outside of the class 
+  # This method only uses instance variables of the same class, therefore it can access the variables directly
+  # Hence, we don't need to pass in any parameters.
+  def virus_effects      
+    # predicted_deaths(@population_density, @population, @state) - ORIGINAL
+    # speed_of_spread(@population_density, @state) - ORIGINAL
+    # REFACTOR
+    predicted_deaths
+    speed_of_spread
   end
 
-  private  #what is this?  what happens if it were cut and pasted above the virus_effects method
+  
+  # private means the below method cannot be seen or called from outside of this class
+  # if private was cut and pasted above the virus_effects, we would have no way to 
+  # invoke the virus_effects method from an instance varibale of VirusPredictor class
+  # therefore the program would be unusable
+  private  
 
-  def predicted_deaths(population_density, population, state)
+  # def predicted_deaths(population_density, population, state) - ORIGINAL 
+  # We don't need to pass in any parameters here because they all can be accessed directly within the same class
+  def predicted_deaths  
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
     elsif @population_density >= 150
@@ -41,7 +58,8 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  # def speed_of_spread(population_density, state) #in months - ORIGINAL
+  def speed_of_spread # REFACTOR
     speed = 0.0
 
     if @population_density >= 200
@@ -67,15 +85,9 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+STATE_DATA.each_key do |state| 
+  VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population], STATE_DATA[state][:region], STATE_DATA[state][:regional_spread]).virus_effects            
+end  
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population], STATE_DATA["Alabama"][:region], STATE_DATA["Alabama"][:regional_spread]) 
-alabama.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population], STATE_DATA["New Jersey"][:region], STATE_DATA["New Jersey"][:regional_spread]) 
-jersey.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population], STATE_DATA["California"][:region], STATE_DATA["California"][:regional_spread]) 
-california.virus_effects
-
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population], STATE_DATA["Alaska"][:region], STATE_DATA["Alaska"][:regional_spread]) 
-alaska.virus_effects
