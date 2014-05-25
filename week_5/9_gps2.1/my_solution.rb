@@ -19,7 +19,7 @@ def bakery_num(num_of_people, fav_food)
       food_qty[key] = num_of_people / food_servings[key]
       num_of_people %= food_servings[key]
     end
-    return "You need to make #{food_qty["pie"]} pie(s), #{food_qty["cake"]} cake(s), and #{food_qty["cookie"]} cookie(s)." # This prints the needed quantities
+    return "You need to make #{food_qty["pie"]} pie(s), #{food_qty["cake"]} cake(s), and #{food_qty["cookie"]} cookie(s)." 
   end
 end
 
