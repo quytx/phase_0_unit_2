@@ -67,12 +67,9 @@ class Silverware
   
   def clean_silverware
     puts "cleaning the #{type}"
-  end
-  
-  # added method
-  def clean
     @clean = true
-  end
+  end  
+  
 end
 
 knife1 = Silverware.new("knife")
@@ -113,6 +110,15 @@ silverware_drawer.view_contents
 fork.eat if fork != nil # debugged
 
 
+
+#BONUS SECTION
+puts fork.clean_silverware
+
+# DRIVER TESTS GO BELOW THIS LINE
+
+
+
+# 5. Reflection
 # Bugs
 # 1. Missing "end" for Drawer class
 # 2. Drawer.add_item missing parameter "item"
@@ -120,14 +126,5 @@ fork.eat if fork != nil # debugged
 # 4. Method Drawer.dump should empty the content 
 # 5. Drawer.remove_item() method should return the item that was removed
 # 6. Drawer.remove_item() will return nil if the drawer is empty, so fork.eat will give an error because fork is nil in this case => need to check if fork is nil before invoking the eat method
-# 7. Undefined method "clean" => this method should set the Silverware's "clean" status to true
-
-#BONUS SECTION
-puts fork.clean
-
-# DRIVER TESTS GO BELOW THIS LINE
-
-
-
-# 5. Reflection
-# It was fun playing around with the classes and methods. I very much got the idea of object-oriented programming where we can think of classes as real objects and methods as the objects' actions/properties 
+# 7. Undefined method "clean" => this method should be invoked by using clean_silverware. This method should also set the Silverware's "clean" status to true
+# It was fun playing around with the classes and methods. I very much got the idea of object-oriented programming to simulate real objects.
