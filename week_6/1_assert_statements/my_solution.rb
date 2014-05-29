@@ -68,4 +68,5 @@ assert { card_2.check_card } # will cause an error
 
 # 5. Reflection
 # The yield block in ruby is very interesting. I am thinking of it as a parameter in the form of a block code
-# which can be passed into a function/method
+# which can be passed into a function/method. 
+# I can see a lot of potential usefulness of the yield block rather than just for this particular assert function
