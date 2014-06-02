@@ -5,7 +5,15 @@
 
 
 # Pseudocode
-
+# Create a "Song" class with name and artirst
+# "Song" class has getter methods to retrieve song name and artist
+# Create "Playlist" class to store songs in a certain order
+# Playlist class has the following methods:
+# 1. Add new songs to the current playlist (add to the end)
+# 2. Get number of tracks in the playlist
+# 3. Remove songs from playlist
+# 4. Check if the playlist contains a given song
+# 5. Display all tracks in the playlist
 
 
 # Initial Solution
@@ -74,7 +82,7 @@ end
 
 
 # Refactored Solution
-
+# I can't think of any yet because these methods are very minimal
 
 
 
@@ -103,3 +111,4 @@ my_playlist.display
 
 
 # Reflection 
+# Just like the other challenge, I have an opportunity to work more with classes and methods, and Ruby's Array class
