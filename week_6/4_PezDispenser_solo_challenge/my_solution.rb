@@ -58,7 +58,15 @@ end
 
 
 # 4. Refactored Solution
-# none
+def rft_add_pez(new_flavor)
+  @flavor << new_flavor
+end
+
+# Maybe a dispenser needs a default maximum capacity, lets say 12 pez?
+def rft_initialize(flavors)
+  raise ArgumentError.new("PezDispenser cannot hold more than 12 pez") if flavors.length <= 12
+  @flavors = flavors
+end
 
 
 
@@ -89,3 +97,9 @@ assert { super_mario.pez_count == 9 }
 
 
 # 5. Reflection 
+# I think the most challenge part of this assignment was to understand how the pez dispenser works
+# in order to simulate its behaviors. I have never heard of a Pez before so I had to search for a video on youtube on how a pez dispenser releases a candy. 
+# After that, I translated that to pseudo code - the dispenser can be viewed as an array that holds "candy" type elements.
+# Up until now I have been quite familiar with objects. I'm thinking of maybe a dispenser should have
+# a maximum capacity - instead of infinite capacity as being implemented. 
+
